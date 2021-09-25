@@ -2,28 +2,23 @@ import React from "react"
 import PropTypes from 'prop-types'
 import { PostHeader } from "./PostHeader"
 
+import { Rate, Subtitle } from './styles'
+
 function Post(props) {
   return (
-    <>
-      <article>
-        <PostHeader
-          onRemove={props.onRemove}
-          post={{
-            id: props.post.id,
-            title: props.post.title,
-            read: props.post.read,
-          }}
-        />
+    <article>
+      <PostHeader
+        onRemove={props.onRemove}
+        post={{
+          id: props.post.id,
+          title: props.post.title,
+          read: props.post.read,
+        }}
+      />
 
-        <br />
-        <small>{props.post.subtitle}</small>
-        <br />
-
-        Media: {props.post.likes / 2}
-      </article>
-
-      <br />
-    </>
+      <Subtitle>{props.post.subtitle}</Subtitle>
+      <Rate>Media: {props.post.likes / 2}</Rate>
+    </article>
   )
 }
 
@@ -34,6 +29,7 @@ Post.propTypes = {
     subtitle: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     read: PropTypes.bool.isRequired,
+    removed: PropTypes.bool.isRequired,
   }).isRequired,
   onRemove: PropTypes.func.isRequired
 }
