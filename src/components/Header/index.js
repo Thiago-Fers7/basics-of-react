@@ -2,15 +2,15 @@ import React from 'react';
 
 import { Container } from './styles';
 
-export default function Header({ onToggleTheme, theme }) {
+export default function Header({ onToggleTheme, selectedTheme }) {
   return (
     <Container>
       <h1>JStack's Blog</h1>
       <button
-        onClick={onToggleTheme}
         type="button"
+        onClick={onToggleTheme}
       >
-        {theme === 'dark' ? '🌞' :  '🌚'}
+        {selectedTheme === 'dark' ? '🌞' : '🌚'}
       </button>
     </Container>
   );

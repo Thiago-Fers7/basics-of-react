@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container } from './styles';
 
-export default function Footer({ onToggleTheme, theme }) {
+export default function Footer({ onToggleTheme, selectedTheme }) {
   return (
     <Container>
       <span>JStack's Blog. Todos os direitos reservados.</span>
@@ -10,7 +10,7 @@ export default function Footer({ onToggleTheme, theme }) {
         type="button"
         onClick={onToggleTheme}
       >
-        {theme === 'dark' ? '🌞' :  '🌚'}
+        {selectedTheme === 'dark' ? '🌞' : '🌚'}
       </button>
     </Container>
   );

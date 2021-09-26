@@ -1,4 +1,4 @@
-import commonStyles from './common';
+import commonStyles from '../common';
 
 export default {
   ...commonStyles,
